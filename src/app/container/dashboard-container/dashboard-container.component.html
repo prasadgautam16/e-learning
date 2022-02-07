@@ -6,6 +6,7 @@
                 <app-sorting-list></app-sorting-list>
             </div>
             <!-- <div *ngFor="let course of courseListByPage | searchTextFilter: searchText" class="course-card"> -->
+
             <div class="page-container">
                 <div *ngFor="let course of courseListByPage" class="course-card">
                     <app-course-card renderingPlace="dashboard" [courseCard]="course"></app-course-card>

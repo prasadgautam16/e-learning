@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Course } from 'src/app/models/course';
 import { CheckoutService } from 'src/app/services/checkout/checkout.service';
 import { SharedService } from 'src/app/services/shared/shared.service';
+import { Constant } from 'src/app/data/constant';
 
 @Component({
   selector: 'app-checkout',
@@ -55,8 +56,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   clickCheckOut() {
-    // alert();
-    this.alertMessage = "You have successfully placed the order.";
+    // alert("You have successfully placed the order.");
+    this.alertMessage = Constant.ORDER_PLACED_SUCCESSFULLY;
     this.checkoutService.removeAllFromCart();
   }
 

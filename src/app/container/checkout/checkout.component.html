@@ -5,7 +5,7 @@
             <div class="page-title-sorting">
                 <p>{{ cartCourseList.length }} Course in Cart</p>
             </div>
-            <div class="checkout-page-container">
+            <div class="page-container-checkout">
                 <div *ngFor="let course of courseListByPage" class="course-card">
                     <app-course-card renderingPlace="checkout" [courseCard]="course"></app-course-card>
                 </div>

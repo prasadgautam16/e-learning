@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { Constant } from 'src/app/data/constant';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   onSubmit(submittedForm : NgForm) {
     if (submittedForm.invalid) return;
 
-    this.alertMessage = "Form saved sucessfully.";
+    this.alertMessage = Constant.FORM_SAVED_SUCCESSFULLY;
     // alert("Form saved sucessfully.")
   }
 }

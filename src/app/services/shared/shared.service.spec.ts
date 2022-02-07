@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { SharedService } from './shared.service';
+import { Constant } from 'src/app/data/constant';
 
 const mockData = [{
   "id": "1",
@@ -240,7 +241,7 @@ describe('SharedService', () => {
 
     let res = service.addToCart('6');
     expect(service.courseList[5].isAddToCart).toEqual(true);
-    expect(res).toEqual('Course successfully added in the cart');
+    expect(res).toEqual(Constant.ADDED_TO_CART_SUCCESSFULLY);
 
   });
 
@@ -249,7 +250,7 @@ describe('SharedService', () => {
 
     let res = service.addToCart('1');
     expect(service.courseList[1].isAddToCart).toEqual(true);
-    expect(res).toEqual('Course XYZ already exist in cart!');
+    expect(res).toEqual(Constant.COURSE_ALREADY_EXIST_IN_CART);
 
   });
 
@@ -271,7 +272,7 @@ describe('SharedService', () => {
 
     let res = service.addToWishlist('1');
     expect(service.courseList[0].isWishList).toEqual(true);
-    expect(res).toEqual('Course successfully added in the wishlist');
+    expect(res).toEqual(Constant.ADDED_TO_WISHLIST_SUCCESSFULLY);
 
   });
 
@@ -293,7 +294,7 @@ describe('SharedService', () => {
 
     let res = service.addToWishlist('1');
     expect(service.courseList[0].isWishList).toEqual(true);
-    expect(res).toEqual('Course XYZ already exist in wishlist!');
+    expect(res).toEqual(Constant.COURSE_ALREADY_EXIST_IN_WISHLIST);
   });
 
   it('calling removeFromCart exist', ()=> {
@@ -314,7 +315,7 @@ describe('SharedService', () => {
 
     let res = service.removeFromCart('1');
     expect(service.courseList[0].isAddToCart).toEqual(false);
-    expect(res).toEqual('Course successfully removed from the cart.');
+    expect(res).toEqual(Constant.REMOVED_FROM_CART_SUCCESSFULLY);
 
   });
 
@@ -336,7 +337,7 @@ describe('SharedService', () => {
 
     let res = service.removeFromCart('1');
     expect(service.courseList[0].isAddToCart).toEqual(false);
-    expect(res).toEqual('Course XYZ doesn\'t exist in cart!');
+    expect(res).toEqual(Constant.COURSE_NOT_EXIST_IN_CART);
   });
 
   it('calling removeFromWishlist exist', ()=> {
@@ -357,7 +358,7 @@ describe('SharedService', () => {
 
     let res = service.removeFromWishlist('1');
     expect(service.courseList[0].isWishList).toEqual(false);
-    expect(res).toEqual('Course successfully removed from the wishlist.');
+    expect(res).toEqual(Constant.REMOVED_FROM_WISHLIST_SUCCESSFULLY);
 
   });
 
@@ -379,7 +380,7 @@ describe('SharedService', () => {
 
     let res = service.removeFromWishlist('1');
     expect(service.courseList[0].isWishList).toEqual(false);
-    expect(res).toEqual('Course XYZ doesn\'t exist in wishlist!');
+    expect(res).toEqual(Constant.COURSE_NOT_EXIST_IN_WISHLIST);
   });
 
   it('calling sortCourseList with id', ()=> {

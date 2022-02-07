@@ -19,6 +19,6 @@ p.your-saving {
     color: var(--primary-color);
 }
 
-.checkout-page-container {
+.page-container-checkout {
     min-height: 20rem;
 }

@@ -6,6 +6,7 @@ import { CourseDetailsComponent } from './course-details.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Observable, of, Subject } from 'rxjs';
 import { SharedService } from 'src/app/services/shared/shared.service';
+import { Constant } from 'src/app/data/constant';
 
 const mockData = [    {
   "id": "1",
@@ -106,25 +107,25 @@ describe('CourseDetailsComponent', () => {
 
 
   it('addToCart', () => {
-    let setSpy = spyOn(sharedService, 'addToCart').and.returnValue("Course successfully added in the cart");
+    let setSpy = spyOn(sharedService, 'addToCart').and.returnValue(Constant.ADDED_TO_CART_SUCCESSFULLY);
     component.addToCart('1');
     expect(setSpy).toHaveBeenCalled();
   });  
 
   it('addToCart', () => {
-    let setSpy = spyOn(sharedService, 'addToCart').and.returnValue("Course XYZ already exist in cart!");
+    let setSpy = spyOn(sharedService, 'addToCart').and.returnValue(Constant.COURSE_ALREADY_EXIST_IN_CART);
     component.addToCart('1');
     expect(setSpy).toHaveBeenCalled();
   });  
 
   it('addToWishList', () => {
-    let setSpy = spyOn(sharedService, 'addToWishlist').and.returnValue("Course successfully added in the wishlist");
+    let setSpy = spyOn(sharedService, 'addToWishlist').and.returnValue(Constant.ADDED_TO_WISHLIST_SUCCESSFULLY);
     component.addToWishList('1');
     expect(setSpy).toHaveBeenCalled();
   });  
 
   it('addToWishList', () => {
-    let setSpy = spyOn(sharedService, 'addToWishlist').and.returnValue("Course XYZ already exist in wishlist!");
+    let setSpy = spyOn(sharedService, 'addToWishlist').and.returnValue(Constant.COURSE_ALREADY_EXIST_IN_WISHLIST);
     component.addToWishList('1');
     expect(setSpy).toHaveBeenCalled();
   });  

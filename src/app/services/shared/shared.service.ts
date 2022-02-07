@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Course } from '../../models/course'
 import MockCourseJSON from '../../data/course-mock-data.json';
-
+import { Constant } from 'src/app/data/constant';
 @Injectable({
   providedIn: 'root'
 })
@@ -95,9 +94,9 @@ export class SharedService {
 
     if (flag) {
       this.courseListUpdated.next();
-      return 'Course successfully added in the cart';
+      return Constant.ADDED_TO_CART_SUCCESSFULLY;
     } else {
-      return 'Course XYZ already exist in cart!';
+      return Constant.COURSE_ALREADY_EXIST_IN_CART;
     }
   }
 
@@ -112,9 +111,9 @@ export class SharedService {
 
     if (flag) {
       this.courseListUpdated.next();
-      return 'Course successfully added in the wishlist';
+      return Constant.ADDED_TO_WISHLIST_SUCCESSFULLY;
     } else {
-      return 'Course XYZ already exist in wishlist!';
+      return Constant.COURSE_ALREADY_EXIST_IN_WISHLIST;
     }
   }
 
@@ -129,9 +128,9 @@ export class SharedService {
 
     if (flag) {
       this.courseListUpdated.next();
-      return 'Course successfully removed from the cart.';
+      return Constant.REMOVED_FROM_CART_SUCCESSFULLY;
     } else {
-      return 'Course XYZ doesn\'t exist in cart!';
+      return Constant.COURSE_NOT_EXIST_IN_CART;
     }
   }
 
@@ -146,9 +145,9 @@ export class SharedService {
 
     if (flag) {
       this.courseListUpdated.next();
-      return 'Course successfully removed from the wishlist.';
+      return Constant.REMOVED_FROM_WISHLIST_SUCCESSFULLY;
     } else {
-      return 'Course XYZ doesn\'t exist in wishlist!';
+      return Constant.COURSE_NOT_EXIST_IN_WISHLIST;
     }
   }
 
