@@ -73,3 +73,7 @@ p.author {
     font-size: 0.75rem;
     margin: 0;
 }
+
+.page-container {
+    min-height: 33.25rem;
+}

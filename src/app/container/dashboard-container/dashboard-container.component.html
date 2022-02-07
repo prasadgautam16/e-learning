@@ -6,10 +6,13 @@
                 <app-sorting-list></app-sorting-list>
             </div>
             <!-- <div *ngFor="let course of courseListByPage | searchTextFilter: searchText" class="course-card"> -->
-
-            <div *ngFor="let course of courseListByPage" class="course-card">
-                <app-course-card renderingPlace="dashboard" [courseCard]="course"></app-course-card>
+            <div class="page-container">
+                <div *ngFor="let course of courseListByPage" class="course-card">
+                    <app-course-card renderingPlace="dashboard" [courseCard]="course"></app-course-card>
+                </div>
             </div>
+            <app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>
+
         </div>
         <div class="col-4 left-padding">
             <div>
@@ -21,5 +24,4 @@
         </div>
     </div>
 </div>
-<app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>
 

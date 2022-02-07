@@ -5,9 +5,12 @@
             <div class="page-title-sorting">
                 <p>{{ cartCourseList.length }} Course in Cart</p>
             </div>
-            <div *ngFor="let course of courseListByPage" class="course-card">
-                <app-course-card renderingPlace="checkout" [courseCard]="course"></app-course-card>
+            <div class="checkout-page-container">
+                <div *ngFor="let course of courseListByPage" class="course-card">
+                    <app-course-card renderingPlace="checkout" [courseCard]="course"></app-course-card>
+                </div>
             </div>
+            <app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>
             <div class="shadow p-3 mb-2 bg-body rounded">
                 <p>Recommended Courses</p>
                 <div *ngFor="let course of recommendedCourses" class="course-card">
@@ -25,4 +28,3 @@
         </div>
     </div>
 </div>
-<app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>

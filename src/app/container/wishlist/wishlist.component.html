@@ -5,9 +5,12 @@
                 <p>My Wishlist</p>
                 <app-sorting-list></app-sorting-list>
             </div>
-            <div *ngFor="let course of courseListByPage" class="course-card">
-                <app-course-card renderingPlace="wishlist" [courseCard]="course"></app-course-card>
+            <div class="page-container">
+                <div *ngFor="let course of courseListByPage" class="course-card">
+                    <app-course-card renderingPlace="wishlist" [courseCard]="course"></app-course-card>
+                </div>
             </div>
+            <app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>
         </div>
         <div class="col-4 left-padding">
             <div class="mt-5"> 
@@ -16,4 +19,3 @@
         </div>
     </div>
 </div>
-<app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>

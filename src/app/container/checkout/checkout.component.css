@@ -18,3 +18,7 @@ p.your-saving {
     font-size: .75rem;
     color: var(--primary-color);
 }
+
+.checkout-page-container {
+    min-height: 20rem;
+}
