@@ -155,12 +155,15 @@ export class SharedService {
     switch (sortInWay) {
       case "asc":
         this.courseList.sort((a,b)=> a.price-b.price);
+        this.searchList.sort((a,b)=> a.price-b.price);
         break;
       case "desc":
         this.courseList.sort((b,a)=> a.price-b.price);
+        this.searchList.sort((b,a)=> a.price-b.price);
         break;
       default:
         this.courseList.sort((a,b)=> parseInt(a.id) - parseInt(b.id));
+        this.searchList.sort((a,b)=> parseInt(a.id) - parseInt(b.id));
         break;
     }
     this.courseListSorted.next();
