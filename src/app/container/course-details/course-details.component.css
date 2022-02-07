@@ -1,0 +1,127 @@
+.dark-background {
+    height: 12rem;
+    width: 100vw;
+    background-color: #0F1317;
+    margin: 0 -5rem;
+    z-index: -1;
+}
+
+.course-title {
+    color: white;
+    padding: 2rem 5.5rem;
+}
+
+.course-title > .title {
+    font-size: 1.5rem;
+}
+
+.course-title > .author {
+    padding-bottom: .5rem;
+}
+
+.heading {
+    height: 3rem;
+    width: 100%;
+}
+
+.course-details {
+    border: 1px var(--border-color) solid;
+    margin: .75rem .75rem .75rem 0 ;
+    padding: 1rem;
+    max-width: 60%;
+}
+
+.course-details > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.course-details > p {
+    font-size: .8rem;
+}
+
+.video-actions-container {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    position: absolute;
+    top: 34%;
+    right: 5%;
+}
+
+.video,
+.actions {
+    border: 1px var(--border-color) solid;
+    max-width: 100%;
+}
+
+.video {
+    border: 1px var(--border-color) solid;
+    margin: 0;
+    height: 19.75rem;
+    background-color: #0F1317;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video > div {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: .35rem solid white;
+}
+
+.actions {
+    margin-top: .75rem;
+    border: 1px var(--border-color) solid;
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.logo-delete {
+    height: 1rem;
+}
+
+.logo-clock {
+    height: .75rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-details-btn {
+    width: 48%;
+}
+
+.discount-price {
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.course-price {
+    text-decoration: line-through;
+    opacity: .7;
+}
+
+.time-left {
+    font-size: .75rem;
+    color: var(--primary-color);
+}
+
+.routing-link {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-arrow {
+    height: 1rem;
+    padding: 0 1rem;
+}

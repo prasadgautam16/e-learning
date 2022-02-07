@@ -1,0 +1,49 @@
+<app-alert-message [message]="alertMessage" *ngIf="alertMessage || alertMessage !== ''" (close)="alertMessage = ''"></app-alert-message>
+
+<div class="heading">
+    <a class="routing-link" routerLink="/home">All Courses</a>  
+    <img class="logo-arrow" src="../assets/right-arrow@2x.png" >
+    {{courseDetail.title}}
+</div>
+<div class="dark-background">
+    <div class="course-title">
+        <h5 class="title">{{courseDetail.title}}</h5>
+        <p class="description">{{courseDetail.courseDescription}}</p>
+        <p class="author">{{courseDetail.courseCreator}}</p>
+        <span class="badge bg-light text-dark" *ngFor="let tag of courseDetail.tags">{{tag}}</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="course-details">
+        <h6>Course Details</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="video-actions-container">
+        <div class="video">
+            <div></div>
+        </div>
+        <div class="actions">
+            <p class="discount-price">Rs {{courseDetail.price}}/-</p>
+            <p class="course-price">Rs {{courseDetail.price}}/-</p>
+            <p class="time-left">
+                <img class="logo-clock" src="../assets/clock@2x.png">
+                Time left for this price
+            </p>
+            <div class="button-container">
+                <button [disabled]="courseDetail.isAddToCart === true" class="btn primary-button course-details-btn" (click)="addToCart(courseDetail.id)">ADD TO CART</button>
+                <button [disabled]="courseDetail.isWishList === true" class="btn secondary-button course-details-btn" (click)="addToWishList(courseDetail.id)">
+                    ADD TO WISHLIST
+                    <img class="logo-delete" src="../assets/wish-list@2x.png">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,34 @@
+.navbar-collapse {
+    flex-grow: 0;
+    align-items: center;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,5rem);
+    padding-left: var(--bs-gutter-x,5rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.logo {
+    height: 2rem;
+}
+
+a.nav-link.nav-link-course,
+a.nav-link.nav-link-wishlist {
+    font-size: .9rem;
+}
+
+.logo-cart,
+.logo-profile {
+    height: 1.25rem;
+    opacity: .8;
+}
+
+.logo-cart:active,
+.logo-cart:hover,
+.logo-profile:active,
+.logo-profile:hover {
+    opacity: 1;
+}

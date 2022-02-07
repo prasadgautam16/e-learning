@@ -1,0 +1,42 @@
+<app-alert-message [message]="alertMessage" *ngIf="alertMessage || alertMessage !== ''" (close)="alertMessage = ''"></app-alert-message>
+
+<div class="course-card" attr.data-id="{{courseCard.id}}">
+    <div class="square"></div>
+    <div class="title-container">
+        <p class="title">{{courseCard.title}}</p>
+        <div *ngIf="renderingPlace==='dashboard' || renderingPlace==='recommend'  || renderingPlace==='wishlist'" >
+            <span class="badge badge-color" *ngFor="let tag of courseCard.tags">{{tag}}</span>
+        </div>
+        <p *ngIf="renderingPlace==='checkout'" class="author">{{courseCard.courseCreator}}</p>
+    </div>
+    <div class="other-details">
+        <div class="vertically-center" *ngIf="renderingPlace==='dashboard' || renderingPlace==='recommend' || renderingPlace==='wishlist'">
+            <p class="author">{{courseCard.courseCreator}}</p>
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='dashboard'">
+            <img *ngIf="!courseCard.isWishList" (click)="addToWishList(courseCard.id)"  class="logo-wishlist" src="../assets/not-wish-star@2x.png">
+            <img *ngIf="courseCard.isWishList" (click)="removeFromWishlist(courseCard.id)" class="logo-wishlist" src="../assets/wishlist-star@2x.png">
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='checkout'">
+            <a class="move-to-wishlist" (click)="addToWishList(courseCard.id)" src="../assets/delete@2x.png">Move to Wishlist</a>
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='dashboard' || renderingPlace==='checkout'  || renderingPlace==='recommend' || renderingPlace==='wishlist'">
+            <p class="discount-price">Rs {{courseCard.price | discountedPrice :courseCard.discount :courseCard.discountValidTill}}/-</p>
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='dashboard' || renderingPlace==='recommend' || renderingPlace==='wishlist'">
+            <p class="original-price">Rs {{courseCard.price}}/-</p>
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='dashboard' || renderingPlace==='recommend' || renderingPlace==='wishlist'">
+            <button class="btn btn-primary-common" (click)="addToCartClick(courseCard.id)">ADD TO CART</button>
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='checkout'">
+            <img class="logo-delete" (click)="removeFromCart(courseCard.id)" src="../assets/delete@2x.png">
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='wishlist'">
+            <img class="logo-delete" (click)="removeFromWishlist(courseCard.id)" src="../assets/delete@2x.png">
+        </div>
+        <div class="vertically-center" *ngIf="renderingPlace==='dashboard' || renderingPlace==='recommend' || renderingPlace==='wishlist'">
+            <img class="logo-arrow" src="../assets/right-arrow@2x.png" routerLink="/courseDetails/{{courseCard.id}}">
+        </div>
+    </div>
+</div>

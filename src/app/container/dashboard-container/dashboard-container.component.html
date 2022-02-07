@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col-8 right-padding">
+            <div class="page-title-sorting">
+                <p>All Courses</p>
+                <app-sorting-list></app-sorting-list>
+            </div>
+            <!-- <div *ngFor="let course of courseListByPage | searchTextFilter: searchText" class="course-card"> -->
+
+            <div *ngFor="let course of courseListByPage" class="course-card">
+                <app-course-card renderingPlace="dashboard" [courseCard]="course"></app-course-card>
+            </div>
+        </div>
+        <div class="col-4 left-padding">
+            <div>
+                <input [(ngModel)]="searchText" class="form-control me-2" type="search" (input)="onSearchInput()" placeholder="Search" aria-label="Search">
+            </div>
+            <div> 
+                <app-cart-card></app-cart-card>
+            </div>
+        </div>
+    </div>
+</div>
+<app-pagination [hidden]="tPage <= 1" [currentPage]="cPage" [totalPage]="tPage" (sendPage)="fetchCourseForCurrentPage($event)"></app-pagination>
+

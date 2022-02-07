@@ -1,0 +1,10 @@
+div.title-ribbon {
+    border-radius: 2px;
+    margin-right: var(--bs-gutter-x,5rem);
+    margin-left: var(--bs-gutter-x,5rem);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 0.5rem
+}

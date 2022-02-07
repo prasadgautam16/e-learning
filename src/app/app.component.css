@@ -1,0 +1,8 @@
+app-header {
+    padding-bottom: 8px;
+}
+
+.router-container {
+    padding-right: var(--bs-gutter-x,5rem);
+    padding-left: var(--bs-gutter-x,5rem);
+}

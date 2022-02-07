@@ -1,0 +1,112 @@
+.course-card {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    opacity: 0.75;
+}
+
+.course-card:hover {
+    opacity: 1;
+}
+
+.title-container {
+    flex: 5;
+}
+
+.other-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex: 6;
+}
+
+.square {
+    height: 60px;
+    width: 60px;
+    background-color: var(--grey-part);
+    margin-right: 1rem;
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+p.title {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+p.author {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+p.discount-price {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+p.original-price {
+    font-size: 0.75rem;
+    margin: 0;
+    text-decoration: line-through;
+}
+
+.author {
+    font-weight: lighter;
+    font-size: 0.75rem;
+}
+
+.vertically-center {
+    display: flex;
+    align-items: center;
+}
+
+.btn-add-to-cart {
+    background-color: var(--primary-color);
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-no-action {
+    background-color: var(--primary-color);
+    font-size: 10px;
+    color: white;
+    font-weight: 300;
+    padding: 2px 1rem;
+    margin-right: 10px;
+    margin-top: 0.25rem;
+}
+
+.badge.badge-color {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.logo-wishlist {
+    height: 1.5rem;
+}
+
+.logo-arrow {
+    height: .75rem;
+}
+
+.logo-delete {
+    height: 1.5rem;
+    padding-right: .5rem;
+}
+
+a.move-to-wishlist {
+    text-decoration: none;
+    font-size: .75rem;
+}

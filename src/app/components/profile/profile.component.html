@@ -1,0 +1,123 @@
+<app-alert-message [showOkBtn]=true [message]="alertMessage" *ngIf="alertMessage || alertMessage !== ''" (close)="alertMessage = ''"></app-alert-message>
+
+<div class="container">
+    <div class="photo-container">
+        <img src="../../../assets/person@2x.png" class="image">
+    </div>
+    <div class="form-container shadow">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="row-flex">
+                <div class="form-group">
+                    <label class="label" for="name">Display Name</label>
+                    <input name="name" ngModel #nameCltr="ngModel" required type="text"
+                        class="form-control" id="nameCltr" aria-describedby="name" placeholder="Enter Display Name">
+                    <span class="help-block" *ngIf="nameCltr.invalid && nameCltr.touched">Please enter a
+                        display name!</span>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="firstName">First Name</label>
+                    <input name="firstName" ngModel #firstNameCtrl="ngModel" required type="text" class="form-control" id="firstName"
+                        placeholder="FirstName" pattern="[A-Za-z]*">
+                    <span class="help-block" *ngIf="firstNameCtrl.invalid && firstNameCtrl.touched">Please enter a
+                        display name!</span>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="lastName">Last Name</label>
+                    <input name="lastName" ngModel #lastNameCtrl="ngModel" type="text" class="form-control" id="lastName"
+                        placeholder="Last Name" pattern="[A-Za-z]*">
+                </div>
+            </div>
+            <div class="form-group-text-area">
+                <label class="label" for="aboutYourSelf">About Yourself</label>
+                <textarea name="aboutYourSelf" ngModel #aboutYourSelfCtrl="ngModel" maxlength="120" class="form-control" id="aboutYourSelf" rows="4"></textarea>
+                <span class="help-block" *ngIf="aboutYourSelfCtrl.invalid && aboutYourSelfCtrl.touched">Maximum character allowed 120!</span>
+            </div>
+            <div class="checkBox">
+                <label class="label" for="interest">Your Area of interest</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="designer" name="option1" value="Designer"
+                        checked>
+                    <label class="form-check-label" for="designer">Designer</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="developer" name="option2" value="Developer">
+                    <label class="form-check-label" for="developer">Developer</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="projectManager" name="option3"
+                        value="ProjectManager" checked>
+                    <label class="form-check-label" for="projectManager">Project Manager</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="sale" name="option4" value="Sales">
+                    <label class="form-check-label" for="sale">Sales</label>
+                </div>
+            </div>
+            <div class="profession">
+                <label class="label" for="professOrStudent">Are you a Student or Professional?</label>
+                <div class="form-check">
+                    <input ngModel #proOrStudCtrl="ngModel" name="proOrStud" class="form-check-input" type="radio" id="student"
+                        value="student" checked>
+                    <label class="form-check-label" for="student">
+                        Student
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input  ngModel #proOrStudCtrl="ngModel" name="proOrStud" class="form-check-input" type="radio" id="professional"
+                        value="professional">
+                    <label class="form-check-label" for="professional">
+                        Professional
+                    </label>
+                </div>
+            </div>
+
+            <div class="shadow-sm professional-details" *ngIf="proOrStudCtrl.value === 'professional'">
+                <div class="experience">
+                    <label class="label">How much of experience you have?</label>
+                    <div class="radio-container">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="experience" id="five-ten" value="five-ten"
+                                checked>
+                            <label class="form-check-label" for="five-ten">0-5</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="experience" id="five-ten" value="five-ten">
+                            <label class="form-check-label" for="five-ten">5-10</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="experience" id="ten-above"
+                                value="ten-above">
+                            <label class="form-check-label" for="ten-above">10 & above</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise">
+                    <label class="label" id="radioHelp">What is your expertise?</label>
+                    <div class="radio-container">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radibuttonInline" id="radibuttonInline1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="radibuttonInline1">Frontend</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radibuttonInline" id="radibuttonInline2"
+                                value="option2">
+                            <label class="form-check-label" for="radibuttonInline2">
+                                Backend
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="role">Mention your role</label>
+                    <input name="role" maxlength="200" ngModel #roleCtrl="ngModel" type="text" class="form-control" id="role" placeholder="Enter your role">
+                    <span class="help-block" *ngIf="roleCtrl.invalid && roleCtrl.touched">Maximum character allowed 200!</span>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary-common" [disabled]="form.invalid">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

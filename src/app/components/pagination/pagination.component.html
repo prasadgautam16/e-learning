@@ -1,0 +1,18 @@
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+            <button class="page-link" (click)="onClickPageButton($event)" data-value="Previous" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </button>
+        </li>
+        <li class="page-item" *ngFor="let x of [].constructor(totalPage), let i = index">
+            <button class="page-link"  (click)="onClickPageButton($event)" attr.data-value="{{ i+1 }}">{{ i+1 }}</button>
+        </li>
+        <li class="page-item">
+            <button class="page-link" (click)="onClickPageButton($event)" aria-label="Next" data-value="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </button>
+        </li>
+    </ul>
+</nav>

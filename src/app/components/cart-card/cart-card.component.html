@@ -1,0 +1,34 @@
+
+<div class="cart-card">
+    <div class="cart-card-title">
+        <h6>YOUR CART DETAILS</h6>
+    </div>
+
+    <div class="cart-card-body">
+        <p class="no-course-in-cart" *ngIf="addToCartCourseList.length ===0">Your cart is empty right now. Please add courses in the cart from the list</p>
+
+        <ul class="list-group list-group-flush" *ngIf="addToCartCourseList.length > 0">
+            <li class="list-group-item" *ngFor="let course of addToCartCourseList">
+                <div class="thumbnail-title">
+                    <div class="square"></div>
+                    <div class="title-container">
+                        <p class="title">{{course.title}}</p>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <p class="price-text">Rs {{course.price | discountedPrice :course.discount :course.discountValidTill}}/-</p>
+                </div>
+            </li>
+        </ul>    
+    </div>
+
+    <div class="cart-card-footer">
+        <div class="total-price-container">
+            <p class="total-price-title">Total Cart Value</p>
+            <p class="total-price">Rs {{ totalPrice }}/- </p>
+        </div>
+        <div class="go-to-cart-link-container" [hidden]="addToCartCourseList.length === 0">
+            <a class="go-to-cart-link" routerLink="/checkout">GO TO CHECKOUT</a>
+        </div>
+    </div>
+</div>
